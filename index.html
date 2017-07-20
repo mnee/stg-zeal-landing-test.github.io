@@ -31,6 +31,7 @@
        //console.log(state.getVariationMap()[exp_id].name);
         var user_id = mixpanel.get_distinct_id();
         document.getElementById("button_foot_link").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
+        document.getElementById("button_text_main").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
     }
 });
     
@@ -46,7 +47,8 @@
 
       if ($(window).scrollTop() >= 70) {
         document.getElementById("footer_signup").style.bottom = "0px";
-        document.getElementById("learn_more_text").style.color = "#06274E";
+        document.getElementById("learn_more").style.bottom = "-85px";
+        document.getElementById("button_text_main").style.zIndex = "-1";
       }
       // Conditional code we'll use to fire events based on scrollPercentage.
       if (window.scrollPercent >= 25 && scrollTwentyFive) {
@@ -89,19 +91,27 @@
     
 <footer>
     <div id="footer_signup">
-        <a href="#" id="button_foot_link" style="text-decoration: none;">
+        <script type="text/javascript">
+            function trackButton() {
+                mixpanel.track("signup_button_clicked");
+            }
+        </script>
+        <a href="#" id="button_foot_link" style="text-decoration: none;" onclick="trackButton()">
             <div id="button_text_2">Start Free Trial</div>
         </a>
     </div>
 </footer>
     
 <body> 
-    <img src="School_Boy_Grad.png" id="main_image" style=>
+    <img src="School_Boy_Grad.png" id="main_image">
     <div id="main_text">Give your child a head start with a personal coach!</div>
     
     <div id="sub_text">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49.99 a month!</div>
+    <a href="#" id="button_foot_link" style="text-decoration: none;" onclick="trackButton()">
+        <div id="button_text_main"><div style="padding: 0px 33px">Start Free Trial</div></div>
+    </a>
     
-    <section id="learn_more" class="blue_strip" style="top: 515px;"><div id="learn_more_text"> LEARN MORE ▼</div>
+    <section id="learn_more" class="blue_strip"><div id="learn_more_text"> LEARN MORE ▼</div>
     </section>  
     
     <section id="demo_video">
@@ -123,7 +133,7 @@
         </div>	
     </section>
     
-    <section class="blue_strip" style="top: 1048px;">
+    <section class="blue_strip" style="top: 234px; position: relative;">
         <div id="edsurge_title">5 STAR RATING ON EDSURGE</div>
         <img src="5-stars-spaced.png" style="width: 350px; display: block; margin: auto; top: 100px; position: relative">
         <div id="edsurge_descriptor">EdSurge is the leading site for educators, entrepreneurs and investors involved in education technology.</div>
@@ -140,18 +150,14 @@
     </section>
     
     <!-- Call to Action -->
-    <section id="section_3">
+    <section id="section_3"></section>
 
-    </section>
-
-    
-
-    <section style="height: 75px; position: absolute; background-color: #656690; top:1400px; width: 100vw; z-index: 29;">
+    <section style="height: 75px; position: relative; background-color: #656690; top:500px; width: 100vw; z-index: 29;">
     <div>
         <img src="https://static.wixstatic.com/media/b02a49_8a4f187eb57444efbb7f38fab3e4408d~mv2.png/v1/fill/w_1200,h_56,al_c,usm_0.66_1.00_0.01/b02a49_8a4f187eb57444efbb7f38fab3e4408d~mv2.png" id="contact">
     </div>
     </section>
     <section id="footer_space"/>
-
+    
 </body>
 </html>
