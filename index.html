@@ -105,19 +105,16 @@
     <section id="learn_more" class="blue_strip" style="top: 515px;"><div id="learn_more_text"> LEARN MORE ▼</div>
     </section>  
     
-    <!-- Zeal descriptors -->
-    <!--
-    <section id="section_2">
-        <div>
-            <img src="https://static.wixstatic.com/media/b02a49_9e22a9fd912042e1ad4a57b6131aded5~mv2.png/v1/fill/w_1636,h_256,al_c,usm_0.66_1.00_0.01/b02a49_9e22a9fd912042e1ad4a57b6131aded5~mv2.png" id="descriptors">
-        </div>	
-    </section>https://www.youtube.com/watch?v=ibCV7giAiYQ
-    -->
     <section id="demo_video">
         <section id="rectangle_2"></section>
         <img src="girl_at_computer.jpg" id="Demo_Img">
-        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ"><img src="Play Button.png" id="play_button"></a>
-        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" id="watch_demo">WATCH DEMO</a>
+        <script type="text/javascript">
+            function trackVideo() {
+                mixpanel.track("stg_demo_video_played");
+            }
+        </script>
+        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" onclick="trackVideo()"><img src="Play Button.png" id="play_button"></a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" id="watch_demo" onclick="trackVideo()">WATCH DEMO</a>
     </section>
     
      <!-- Zeal descriptors -->
@@ -129,7 +126,14 @@
     
     <section class="blue_strip" style="top: 1048px;">
         <div id="edsurge_title">5 STAR RATING ON EDSURGE</div>
-        <img src="5-stars-spaced.png" style="width: 200px; display: block; margin: auto; top: 100px; position: relative">
+        <img src="5-stars-spaced.png" style="width: 350px; display: block; margin: auto; top: 100px; position: relative">
+        <div id="edsurge_descriptor">EdSurge is the leading site for educators, entrepreneurs and investors involved in education technology.</div>
+        <script type="text/javascript">
+            function trackEdsurge() {
+                mixpanel.track("stg_opened_edsurge");
+            }
+        </script>
+        <a href="https://www.edsurge.com/product-reviews/zeal-product" target="_blank" onclick="trackEdsurge()"><img src="EdSurgeLogo.svg" id="edsurge_logo"></a>
     </section>
     
     <section>
