@@ -44,9 +44,13 @@
   $(window).bind('scroll', function() {
       window.scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
 
+      if ($(window).scrollTop() >= 70) {
+        document.getElementById("footer_signup").style.bottom = "0px";
+        document.getElementById("learn_more_text").style.color = "#06274E";
+      }
       // Conditional code we'll use to fire events based on scrollPercentage.
       if (window.scrollPercent >= 25 && scrollTwentyFive) {
-          mixpanel.track("stg_landing_scroll_percent", {
+        mixpanel.track("stg_landing_scroll_percent", {
               "Percent": 25
           });
           scrollTwentyFive = false;
@@ -85,11 +89,6 @@
     
 <footer>
     <div id="footer_signup">
-        <script type="text/javascript">
-            $(window).scroll(function() {
-            document.getElementById("footer_signup").style.bottom="0px";
-            }
-        </script>
         <a href="#" id="button_foot_link" style="text-decoration: none;">
             <div id="button_text_2">Start Free Trial</div>
         </a>
@@ -103,7 +102,7 @@
         <div id="sub_text" style="width: 400px; height: 60px; font-family: Roboto; font-size: 22.5px; line-height: 1.33; position: absolute; top: 350px; left: 50px; color: rgba(0, 0, 0, .8);">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49.99 a month!</div>
     </div>
     
-    <section id="learn_more" class="blue_strip" style="top: 515px;"><div id="learn_more_text"> Learn More ▼</div>
+    <section id="learn_more" class="blue_strip" style="top: 515px;"><div id="learn_more_text"> LEARN MORE ▼</div>
     </section>  
     
     <!-- Zeal descriptors -->
@@ -120,13 +119,31 @@
         <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ"><img src="Play Button.png" id="play_button"></a>
         <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" id="watch_demo">WATCH DEMO</a>
     </section>
+    
+     <!-- Zeal descriptors -->
+    <section id="section_2">
+        <div>
+            <img src="https://static.wixstatic.com/media/b02a49_9e22a9fd912042e1ad4a57b6131aded5~mv2.png/v1/fill/w_1636,h_256,al_c,usm_0.66_1.00_0.01/b02a49_9e22a9fd912042e1ad4a57b6131aded5~mv2.png" id="descriptors">
+        </div>	
+    </section>
+    
+    <section class="blue_strip" style="top: 1048px;">
+        <div id="edsurge_title">5 STAR RATING ON EDSURGE</div>
+        <img src="5-stars-spaced.png" style="width: 200px; display: block; margin: auto; top: 100px; position: relative">
+    </section>
+    
+    <section>
+    
+    </section>
+    
     <!-- Call to Action -->
     <section id="section_3">
+
     </section>
 
-    <section class="blue_strip" style="top: 930px;"/>
+    
 
-    <section style="height: 75px; position: absolute; background-color: #656690; top:32px; width: 100vw; z-index: 29;">
+    <section style="height: 75px; position: absolute; background-color: #656690; top:1400px; width: 100vw; z-index: 29;">
     <div>
         <img src="https://static.wixstatic.com/media/b02a49_8a4f187eb57444efbb7f38fab3e4408d~mv2.png/v1/fill/w_1200,h_56,al_c,usm_0.66_1.00_0.01/b02a49_8a4f187eb57444efbb7f38fab3e4408d~mv2.png" id="contact">
     </div>

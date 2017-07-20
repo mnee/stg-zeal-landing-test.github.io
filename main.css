@@ -44,14 +44,14 @@ body {
 }
     
 #footer_signup {
-    bottom: 0px;
+    bottom: -80px;
     box-sizing: border-box;
     display: block;
     height: 80px;
     position: fixed;
     text-align: center;
     width: 100vw;
-    z-index: 30;
+    z-index: 47;
     align-items: center;
     justify-content: center;
     background: rgb(255, 75, 179) none repeat scroll 0% 0% / auto padding-box border-box;
@@ -160,35 +160,37 @@ body {
 }
 
 .blue_strip {
-    height: 40px; 
+    height: 85px; 
     position: absolute; 
     background-color: #06274E; 
     width: 100vw;
+    z-index: 45;
 }
 
 #section_2 {
     height: 150px; 
     position: absolute; 
     background-color: #656690; 
-    top: 555px; 
+    top: 900px; 
     width: 100vw;
+    z-index:46;
 }
 
 #descriptors {
     position: relative; 
-    top:15px; 
-    width: 850px; 
-    height: 120px; 
+    top:25px; 
+    width: 800px; 
+    height: 100px; 
     object-fit: cover; 
     display:block; 
     margin:auto;
 }
 
 #section_3 {
-    height: 300px; 
+    height: px; 
     position: absolute; 
     background-color: white; 
-    top: 755px; 
+    top: 1000px; 
     width: 100vw;
 }
 
@@ -214,56 +216,121 @@ body {
     display: block; 
     margin:auto; 
     position: relative; 
-    top: 24px;
+    top: 23px;
 }
 
 #footer_space {
     height: 120px; 
     position: absolute; 
-    top: 65px; 
+    top: 1435px; 
     background-color: white; 
     width: 100vw;
 }
 
+#rectangle_2 {
+    width: 100vw;
+	height: 300px;
+    position: absolute;
+    top: 600px;
+    z-index: 40;
+	background-image: linear-gradient(to bottom, #2ec5e8, #28e8fd);
+    opacity: 0.8
+}
 
+#Demo_Img {
+    width: 100vw;
+	height: 300px;
+    position: absolute;
+    top: 600px;
+    z-index: 39;
+    object-fit: cover;
+    object-position: 10% 40%;
+}
 
-/* Commented out button
-#button {
-    bottom: 150px;
-    cursor: default;
-    height: 65px;
-    min-height: 37px;
+#play_button {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    top: 160px;
+    z-index: 41;
+}
+
+#watch_demo {
+    width: 121px;
+	height: 14px;
+	font-family: sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: center;
+	color: white;
     position: relative;
     display: block;
     margin: auto;
+    z-index: 41;
+    top: 180px;
+}
+
+#learn_more_text {
+    width: 250px;
+	height: 14px;
+	font-family: "Verdana", sans-serif;
+	font-size: 18px;
+	font-weight: lighter;
+	text-align: center;
+	color: white;
+    position: relative;
+    display: block;
+    margin: auto;
+    z-index: 41;
     top: 30px;
-    width: 340px;
-    perspective-origin: 170px 32.5px;
-    transform-origin: 170px 32.5px;
-    font: normal normal normal normal 10px / normal Arial, Helvetica, sans-serif;
 }
 
-#A_2 {
-    bottom: 0px;
-    cursor: pointer;
-    display: flex;
-    height: 59px;
-    left: -50px;
-    position: absolute;
-    right: 0px;
-    text-decoration: none solid rgb(0, 0, 238);
-    top: 0px;
-    width: 450px;
-    align-items: center;
-    justify-content: center;
-    perspective-origin: 170px 32.5px;
-    transform-origin: 170px 32.5px;
-    border: 3px solid rgb(101, 102, 144);
-    border-radius: 5px 5px 5px 5px;
-    font: normal normal normal normal 10px / normal Arial, Helvetica, sans-serif;
-    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+#edsurge_title {
+    width: 600px;
+	height: 14px;
+	font-family: "Verdana", sans-serif;
+	font-size: 24px;
+	font-weight: lighter;
+	text-align: center;
+	color: white;
+    position: relative;
+    display: block;
+    margin: auto;
+    z-index: 41;
+    top: 25px;
 }
 
-#A_2:hover {
-    background-color: #CACBE3
-}*/
+#5_stars {
+    position: relative;
+    top: 800px;
+    width: 100px;
+    height: 25%;
+    display: block;
+    margin: auto;
+    object-fit: cover
+}
+
+#edsurge_descriptor {
+    width: 750px;
+	height: 80px;
+    top: 125px;
+    position: relative;
+    display: block;
+    margin: auto;
+    
+	font-family: sans-serif;
+	font-size: 27.5px;
+	line-height: 1.36;
+	text-align: center;
+	color: #9b9b9b;
+}
+
+#edsurge_logo {
+    width: 100px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 145px;
+}
