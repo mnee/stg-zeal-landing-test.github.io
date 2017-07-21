@@ -66,7 +66,7 @@ body {
     cursor: pointer;
     height: 30px;
     margin: auto;
-    background-color: #00e600;
+    background-color: #00cc00;
     text-decoration: none solid rgb(255, 255, 255);
     text-transform: uppercase;
     white-space: nowrap;
@@ -377,10 +377,11 @@ body {
 }
 
 #button_text_main {
-    position: absolute;
-    top: 70vh;
-    right: 50px;
-    background-color: #00e600;
+    position: relative;
+    top: -160px;
+    display: block;
+    margin: auto;
+    background-color: #00cc00;
     color: rgb(255, 255, 255);
     cursor: pointer;
     height: 30px;

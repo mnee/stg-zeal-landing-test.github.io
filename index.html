@@ -111,19 +111,22 @@
         <div id="button_text_main"><div style="padding: 0px 33px">Start Free Trial</div></div>
     </a>
     
-    <section id="learn_more" class="blue_strip"><div id="learn_more_text"> LEARN MORE ▼</div>
+    <section id="learn_more" class="blue_strip"><div id="learn_more_text">LEARN MORE ▼</div>
     </section>  
     
     <section id="demo_video">
         <section id="rectangle_2"></section>
         <img src="girl_at_computer.jpg" id="Demo_Img">
+        <iframe id="video_frame" style="border: 3px solid #ffffff; position: fixed; z-index: -1; top: 300px; left: 100px;" width="672" height="378" src="https://www.youtube.com/embed/ibCV7giAiYQ" frameborder="0" allowfullscreen></iframe>
         <script type="text/javascript">
             function trackVideo() {
                 mixpanel.track("stg_demo_video_played");
+                var frame = document.getElementById("video_frame");
+                frame.style.zIndex="50";
             }
         </script>
-        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" onclick="trackVideo()"><img src="Play Button.png" id="play_button"></a>
-        <a target="_blank" href="https://www.youtube.com/watch?v=ibCV7giAiYQ" id="watch_demo" onclick="trackVideo()">WATCH DEMO</a>
+        <a target="_blank" onclick="trackVideo()"><img src="Play Button.png" id="play_button"></a>
+        <a target="_blank" id="watch_demo" onclick="trackVideo()">WATCH DEMO</a>
     </section>
     
      <!-- Zeal descriptors -->
