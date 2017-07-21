@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
+   <script src="https://www.youtube.com/iframe_api"></script>
+    
     <!-- Staging: 99f35bfccecaa88d8b1da3f4cf850408 Production: d88a3f958bee96f47745ae7b6f280df9 -->
     
     <!-- start Mixpanel  -->
@@ -106,23 +108,45 @@
     <img src="School_Boy_Grad.png" id="main_image">
     <div id="main_text">Give your child a head start with a personal coach!</div>
     
-    <div id="sub_text">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49.99 a month!</div>
+    <div id="sub_text">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49. 99 a month!</div>
     <a href="#" id="button_foot_link_1" style="text-decoration: none;" onclick="trackButton()">
         <div id="button_text_main"><div style="padding: 0px 33px">Start Free Trial</div></div>
     </a>
     
-    <section id="learn_more" class="blue_strip"><div id="learn_more_text">LEARN MORE ▼</div>
+    <section id="learn_more"><div id="learn_more_text">LEARN MORE ▼</div>
     </section>  
     
     <section id="demo_video">
         <section id="rectangle_2"></section>
         <img src="girl_at_computer.jpg" id="Demo_Img">
-        <iframe id="video_frame" style="border: 3px solid #ffffff; position: fixed; z-index: -1; top: 300px; left: 100px;" width="672" height="378" src="https://www.youtube.com/embed/ibCV7giAiYQ" frameborder="0" allowfullscreen></iframe>
+        <iframe id="video_frame" width="672" height="378" src="https://www.youtube.com/embed/ibCV7giAiYQ" frameborder="0" allowfullscreen></iframe>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function closeFrame() {
+                var frame = document.getElementById("video_frame");
+                frame.style.visibility="hidden";
+                var close = document.getElementById("close_but");
+                close.style.visibility="hidden";
+                frame.src="https://www.youtube.com/embed/ibCV7giAiYQ";
+            }
+        </script>
+        <a onclick="closeFrame()"><img src="CloseButton.png" id="close_but"></a>
         <script type="text/javascript">
             function trackVideo() {
                 mixpanel.track("stg_demo_video_played");
                 var frame = document.getElementById("video_frame");
-                frame.style.zIndex="50";
+                frame.style.visibility="visible";
+                var height = $(window).height()/2 - 189;
+                frame.style.top=height.toString() + 'px';
+                var width = $(window).width()/2 - 336;
+                frame.style.left=width.toString() + 'px';
+                
+                var close = document.getElementById("close_but");
+                close.style.visibility="visible";
+                var heightC = $(window).height()/2 - 204;
+                close.style.top=heightC.toString() + 'px';
+                var widthC = $(window).width()/2 + 321;
+                close.style.left=widthC.toString() + 'px';
             }
         </script>
         <a target="_blank" onclick="trackVideo()"><img src="Play Button.png" id="play_button"></a>
