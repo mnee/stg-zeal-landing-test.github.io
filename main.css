@@ -463,6 +463,15 @@ body {
     display: none;
 }
 
+#contact_section {
+    height: 75px; 
+    position: relative; 
+    background-color: #656690; 
+    top: 500px; 
+    width: 100vw; 
+    z-index: 29;
+}
+
 @media only screen and (max-width: 736px) {
     /* For mobile phones: */
     #main_text {
@@ -503,17 +512,17 @@ body {
     
     #edsurge_descriptor {
         font-size: 20px;
-        width: 80vw;
+        width: 90vw;
     }
     
     #contact {
-        width: 430px;
-        height: 22px;
+        width: 370px;
+        height: 18px;
         top: 27px;
     }
     
     #edsurge_logo {
-        top: 160px;
+        top: 150px;
     }
 }
 
