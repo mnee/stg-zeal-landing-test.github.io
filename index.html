@@ -32,8 +32,8 @@
         });*/
        //console.log(state.getVariationMap()[exp_id].name);
         var user_id = mixpanel.get_distinct_id();
-        document.getElementById("button_foot_link").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
-        document.getElementById("button_foot_link_1").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
+        //document.getElementById("button_foot_link").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
+       // document.getElementById("button_foot_link_1").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
     }
 });
     
@@ -96,9 +96,24 @@
         <script type="text/javascript">
             function trackButton() {
                 mixpanel.track("signup_button_clicked");
+                document.getElementById("signup_screen").style.bottom="0px";
+                
+                var box = document.getElementById("signup_close").style;
+                var arrow = document.getElementById("down_arrow").style;
+                box.top="0px";
+                var leftShift = $(window).width()/2 - 75;
+                box.left=leftShift.toString() + 'px';
+                arrow.top="-9px";
+                arrow.left=leftShift.toString() + 'px';
+            }
+            
+            function closeSignup() {
+                document.getElementById("signup_screen").style.bottom="-100vh";
+                document.getElementById("signup_close").style.top="100vh";
+                document.getElementById("down_arrow").style.top="100vh";
             }
         </script>
-        <a href="#" id="button_foot_link" style="text-decoration: none;" onclick="trackButton()">
+        <a id="button_foot_link" style="text-decoration: none;" onclick="trackButton()">
             <div id="button_text_2">Start Free Trial</div>
         </a>
     </div>
@@ -109,7 +124,7 @@
     <div id="main_text">Give your child a head start with a personal coach!</div>
     
     <div id="sub_text">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49. 99 a month!</div>
-    <a href="#" id="button_foot_link_1" style="text-decoration: none;" onclick="trackButton()">
+    <a id="button_foot_link_1" style="text-decoration: none;" onclick="trackButton()">
         <div id="button_text_main"><div style="padding: 0px 33px">Start Free Trial</div></div>
     </a>
     
@@ -186,5 +201,10 @@
     </section>
     <section id="footer_space"/>
     
+    <!-- Signup screen -->
+    <a onclick="closeSignup()"><div id="signup_close"></div></a>
+    <a onclick="closeSignup()"><div id="down_arrow">˅</div></a>
+    <iframe id="signup_screen" frameBorder="0" src="https://mnee.github.io/zeal-signup.github.io/">
+    </iframe> 
 </body>
 </html>

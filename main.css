@@ -427,3 +427,36 @@ body {
     visibility: hidden;
     cursor: pointer;
 }
+
+#signup_screen {
+    width: 100vw; 
+    height: 100vh; 
+    position: fixed; 
+    bottom: -100vh; 
+    z-index: 60;
+    transition: bottom 1200ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+#signup_close {
+    width: 150px;
+    height: 40px;
+    position: fixed;
+    top: 100vh;
+    background-color: #06274E; 
+    z-index: 61;
+    cursor: pointer;
+    transition: top 1200ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+#down_arrow {
+    font-size: 50px; 
+    padding-left:64px; 
+    position: fixed; 
+    width: 50px; 
+    height: 40px; 
+    z-index: 62; 
+    top: 100vh; 
+    color: white;
+    cursor: pointer;
+    transition: top 1200ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
