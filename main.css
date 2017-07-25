@@ -468,6 +468,28 @@ body {
     display: none;
 }
 
+.descriptor_titles {
+    text-align: center;
+    padding-right: 50px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.descriptor_text {
+    width: 200px;
+    padding: 20px 0px;
+    height: 160px;
+    color: #DDDDDD;
+    float: left;
+    display: table-cell;
+}
+
+
+.descriptor_row {
+    display: table-row;
+    border-bottom: 1pt solid white;
+}
+
 #contact_section {
     height: 75px; 
     position: relative; 
@@ -542,7 +564,6 @@ body {
     
 }
 
-// For small iphones
 @media only screen and (max-width: 667px) {
     #edsurge_descriptor {
         font-size: 14px;
@@ -552,25 +573,4 @@ body {
 
 @media only screen and (max-width: 736px) and (orientation: landscape) {
     
-}
-.descriptor_titles {
-    text-align: center;
-    padding-right: 50px;
-    vertical-align: middle;
-    display: table-cell;
-}
-
-.descriptor_text {
-    width: 200px;
-    padding: 20px 0px;
-    height: 160px;
-    color: #DDDDDD;
-    float: left;
-    display: table-cell;
-}
-
-
-.descriptor_row {
-    display: table-row;
-    border-bottom: 1pt solid white;
 }
