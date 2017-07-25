@@ -139,9 +139,9 @@
         <script type="text/javascript">
             function closeFrame() {
                 var frame = document.getElementById("video_frame");
-                frame.style.visibility="hidden";
+                frame.style.display="none";
                 var close = document.getElementById("close_but");
-                close.style.visibility="hidden";
+                close.style.display="none";
                 frame.src="https://www.youtube.com/embed/ibCV7giAiYQ";
             }
         </script>
@@ -151,10 +151,10 @@
                 mixpanel.track("stg_demo_video_played");
 
                 var frame = document.getElementById("video_frame");
-                frame.style.visibility="visible";
+                frame.style.display="block";
                 
                 var close = document.getElementById("close_but");
-                close.style.visibility="visible";
+                close.style.display="block";
                 
                 if($(window).width() <= 736) {
                     frame.width = "336";

@@ -169,7 +169,7 @@ body {
 }
 
 #section_2 {
-    height: 150px; 
+    height: 170px; 
     position: relative;
     top: 235px;
     background-color: #656690; 
@@ -414,7 +414,7 @@ body {
     border: 3px solid #ffffff; 
     position: fixed; 
     z-index: 50;  
-    visibility: hidden
+    display: none;
 }
 
 #close_but {
@@ -422,7 +422,7 @@ body {
     height: 30px;
     position: fixed;
     z-index: 51;
-    visibility: hidden;
+    display: none;
     cursor: pointer;
 }
 
@@ -490,7 +490,7 @@ body {
     }
     
     #section_2 {
-        height: 470px;
+        height: 490px;
     }
     
     #descriptors_mobile {
@@ -522,7 +522,12 @@ body {
     }
     
     #edsurge_logo {
-        top: 150px;
+        top: 160px;
+    }
+    
+    #close_but {
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -535,8 +540,8 @@ body {
 
 .descriptor_text {
     width: 200px;
-    padding: 10px 0px;
-    height: 140px;
+    padding: 20px 0px;
+    height: 160px;
     color: #DDDDDD;
     float: left;
     display: table-cell;
