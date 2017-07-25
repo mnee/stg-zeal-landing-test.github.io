@@ -542,6 +542,12 @@ body {
     
 }
 
+// For small iphones
+@media only screen and (max-width: 400px) {
+    #edsurge_descriptor {
+        font-size: 18px;
+    }
+}
 .descriptor_titles {
     text-align: center;
     padding-right: 50px;
