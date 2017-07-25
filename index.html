@@ -54,7 +54,7 @@
         document.getElementById("button_text_main").style.zIndex = "-1";
       }
       // Conditional code we'll use to fire events based on scrollPercentage.
-      if (window.scrollPercent == 0 && scrollZero) {
+      if (window.scrollPercent >= 0 && scrollZero) {
         mixpanel.track("stg_landing_scroll_percent", {
               "Percent": 0
           });
