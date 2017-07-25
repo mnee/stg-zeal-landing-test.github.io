@@ -96,13 +96,17 @@
         <script type="text/javascript">
             function trackButton() {
                 mixpanel.track("signup_button_clicked");
-                document.getElementById("signup_screen").style.bottom="0px";
+                var screen = document.getElementById("signup_screen").style;
+                screen.visibility="visible";
+                screen.bottom="0px";
                 
                 var box = document.getElementById("signup_close").style;
                 var arrow = document.getElementById("down_arrow").style;
+                box.visibility="visible";
                 box.top="0px";
                 var leftShift = $(window).width()/2 - 75;
                 box.left=leftShift.toString() + 'px';
+                arrow.visibility="visible";
                 arrow.top="-9px";
                 arrow.left=leftShift.toString() + 'px';
             }
