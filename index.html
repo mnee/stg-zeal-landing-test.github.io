@@ -98,16 +98,19 @@
                 mixpanel.track("signup_button_clicked");
                 var screen = document.getElementById("signup_screen").style;
                 screen.visibility="visible";
+                screen.zIndex="60";
                 screen.bottom="0px";
                 
                 var box = document.getElementById("signup_close").style;
                 var arrow = document.getElementById("down_arrow").style;
                 box.visibility="visible";
                 box.top="0px";
+                box.zIndex="61";
                 var leftShift = $(window).width()/2 - 75;
                 box.left=leftShift.toString() + 'px';
                 arrow.visibility="visible";
                 arrow.top="-9px";
+                arrow.zIndex="62";
                 arrow.left=leftShift.toString() + 'px';
             }
             

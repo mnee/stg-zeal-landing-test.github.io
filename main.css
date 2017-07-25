@@ -433,7 +433,7 @@ body {
     height: 100vh; 
     position: fixed; 
     bottom: -100vh; 
-    z-index: 60;
+    z-index: -1;
     visibility: hidden;
     transition: bottom 1200ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 }
@@ -444,7 +444,7 @@ body {
     position: fixed;
     top: 100vh;
     background-color: #06274E; 
-    z-index: 61;
+    z-index: -2;
     cursor: pointer;
     visibility: hidden;
     transition: top 1200ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
@@ -456,7 +456,7 @@ body {
     position: fixed; 
     width: 50px; 
     height: 40px; 
-    z-index: 62; 
+    z-index: -1; 
     top: 100vh; 
     color: white;
     cursor: pointer;
