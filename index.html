@@ -38,7 +38,6 @@
 });
     
   // Variables to prevent continuous firing of custom events
-  var scrollZero = true;
   var scrollTwentyFive = true;
   var scrollFifty = true;
   var scrollSeventyFive = true;
@@ -54,12 +53,6 @@
         document.getElementById("button_text_main").style.zIndex = "-1";
       }
       // Conditional code we'll use to fire events based on scrollPercentage.
-      if (window.scrollPercent >= 0 && scrollZero) {
-        mixpanel.track("stg_landing_scroll_percent", {
-              "Percent": 0
-          });
-          scrollZero = false;
-      }
       
       if (window.scrollPercent >= 25 && scrollTwentyFive) {
         mixpanel.track("stg_landing_scroll_percent", {
