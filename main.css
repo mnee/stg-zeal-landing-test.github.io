@@ -565,5 +565,16 @@ body {
 }
 
 @media only screen and (max-width: 736px) and (orientation: landscape) {
+    #main_text {
+        width: 400px;
+    }
     
+    #sub_text {
+        width: 400px;
+        top: 180px;
+    }
+    
+    #button_text_main {
+        top: -170px;
+    }
 }
