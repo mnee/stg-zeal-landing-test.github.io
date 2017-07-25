@@ -545,9 +545,13 @@ body {
 // For small iphones
 @media only screen and (max-width: 667px) {
     #edsurge_descriptor {
-        font-size: 18px;
+        font-size: 14px;
         width: 95vw;
     }
+}
+
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+    
 }
 .descriptor_titles {
     text-align: center;
