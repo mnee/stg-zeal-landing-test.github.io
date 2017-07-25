@@ -566,17 +566,17 @@ body {
 
 @media only screen and (max-width: 736px) and (orientation: landscape) {
     #main_text {
-        top: 80px;
+        top: 60px;
         width: 440px;
     }
     
     #sub_text {
         width: 400px;
-        top: 160px;
+        top: 140px;
     }
     
     #button_text_main {
-        top: -150px;
+        top: -135px;
     }
     
     #edsurge_logo {
