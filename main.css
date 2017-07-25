@@ -543,7 +543,7 @@ body {
 }
 
 // For small iphones
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 667px) {
     #edsurge_descriptor {
         font-size: 18px;
         width: 95vw;
