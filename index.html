@@ -37,8 +37,10 @@
     }
 });
         
-  if (document.getElementById("signup_screen"))
+  if (document.getElementById("signup_screen")) {
+    console.log(mixpanel.get_distinct_id());
     document.getElementById("signup_screen").contentWindow.postMessage(mixpanel.get_distinct_id(), '*');
+  }
     
   // Variables to prevent continuous firing of custom events
   var scrollTwentyFive = true;
