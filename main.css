@@ -246,6 +246,7 @@ body {
     z-index: 39;
     object-fit: cover;
     object-position: 10% 40%;
+    transform: scaleX(-1);
 }
 
 #play_button {
