@@ -578,4 +578,12 @@ body {
     #button_text_main {
         top: -150px;
     }
+    
+    #edsurge_logo {
+        top: 150px;
+    }
+    
+    #edsurge_descriptor {
+        font-size: 23px;
+    }
 }
