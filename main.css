@@ -403,7 +403,8 @@ body {
     border-radius: 30px 30px 30px 30px;
     font: normal normal bold normal 14px / 14px sans-serif;
     outline: rgb(255, 255, 255) none 0px;
-    padding: 16px 8px 27px
+    vertical-align: middle;
+    text-align: center
 }
 
 #button_text_main:hover {
