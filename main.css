@@ -477,11 +477,12 @@ body {
     #main_text {
         font-size: 32px;
         width: 250px;
+        top: 100px;
     }
     
     #sub_text {
         font-size: 20px;
-        top: 320px;
+        top: 280px;
         width: 260px;
     }
     
@@ -525,6 +526,9 @@ body {
         top: 160px;
     }
     
+    #button_text_main {
+        top: -175px;
+    }
 }
 
 .descriptor_titles {
