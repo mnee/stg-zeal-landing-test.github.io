@@ -38,16 +38,17 @@
 });
   
   console.log("running");
-  if (document.getElementById("signup_screen")) {
-    console.log(mixpanel.get_distinct_id());
-    document.getElementById("signup_screen").contentWindow.postMessage(mixpanel.get_distinct_id(), '*');
-  }
     
   // Variables to prevent continuous firing of custom events
   var scrollTwentyFive = true;
   var scrollFifty = true;
   var scrollSeventyFive = true;
   var scrollOneHundred = true;
+        
+  function setDistinct() {
+    console.log(mixpanel.get_distinct_id());
+    document.getElementById("signup_screen").contentWindow.postMessage(mixpanel.get_distinct_id(), '*');
+  }
 
   // Create the scrollPercentage
   $(window).bind('scroll', function() {
@@ -265,7 +266,7 @@
     <!-- Signup screen -->
     <a onclick="closeSignup()"><div id="signup_close"></div></a>
     <a onclick="closeSignup()"><div id="down_arrow">˅</div></a>
-    <iframe id="signup_screen" frameBorder="0" src="https://mnee.github.io/zeal-signup.github.io/">
+    <iframe id="signup_screen" frameBorder="0" src="https://mnee.github.io/zeal-signup.github.io/" onload="setDistinct()">
     </iframe> 
 </body>
 </html>
