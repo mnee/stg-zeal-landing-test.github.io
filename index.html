@@ -36,9 +36,7 @@
        // document.getElementById("button_foot_link_1").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
     }
 });
-  
-  console.log("running");
-    
+ 
   // Variables to prevent continuous firing of custom events
   var scrollTwentyFive = true;
   var scrollFifty = true;
@@ -46,7 +44,6 @@
   var scrollOneHundred = true;
         
   function setDistinct() {
-    console.log(mixpanel.get_distinct_id());
     document.getElementById("signup_screen").contentWindow.postMessage(mixpanel.get_distinct_id(), '*');
   }
 
