@@ -19,6 +19,12 @@
        // document.getElementById("button_foot_link_1").href = 'https://stg-parent.zeal.com/#!/landing?mode=createAccount&mixpanelDistinctId=' + user_id;
     }
 });
+
+  // Tracking time spent on page
+  setTimeout(function(){
+      document.getElementById("footer_signup").style.bottom = "0px";
+      document.getElementById("learn_more").style.bottom = "-85px";
+  }, 3000);
  
   // Variables to prevent continuous firing of custom events
   var scrollTwentyFive = true;
@@ -35,9 +41,8 @@
       window.scrollPercent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
 
       if ($(window).scrollTop() >= 70) {
-        document.getElementById("footer_signup").style.bottom = "0px";
-        document.getElementById("learn_more").style.bottom = "-85px";
-        document.getElementById("button_text_main").style.zIndex = "-1";
+          document.getElementById("footer_signup").style.bottom = "0px";
+          document.getElementById("learn_more").style.bottom = "-85px";
       }
       // Conditional code we'll use to fire events based on scrollPercentage.
       
@@ -73,22 +78,6 @@
   
 function trackButton() {
     mixpanel.track("signup_button_clicked");
-    var screen = document.getElementById("signup_screen").style;
-    screen.visibility="visible";
-    screen.zIndex="60";
-    screen.bottom="0px";
-
-    var box = document.getElementById("signup_close").style;
-    var arrow = document.getElementById("down_arrow").style;
-    box.visibility="visible";
-    box.top="0px";
-    box.zIndex="61";
-    var leftShift = $(window).width()/2 - 75;
-    box.left=leftShift.toString() + 'px';
-    arrow.visibility="visible";
-    arrow.top="-9px";
-    arrow.zIndex="62";
-    arrow.left=leftShift.toString() + 'px';
 }
             
 function closeSignup() {
@@ -145,4 +134,87 @@ function trackVideo() {
 
 function trackEdsurge() {
     mixpanel.track("stg_opened_edsurge");
+}
+
+
+// SIGNUP CODE
+function handleToken(data) {
+    console.log(data.data.session.access_token);
+    mixpanel.track("landing_signup", {
+        "$email": email,
+        "role": parent,
+        "username": email
+    });
+    //window.location="https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
+    //window.location = "https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
+}
+
+function signup() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var prof = {"user":{"first_name": email, "last_name": "Tutoring", "name": email, "password": password}};
+    console.log(JSON.stringify(prof));
+    $.post("https://api.zeal.com/v7/public/users/parent", prof).done(handleToken);
+}
+
+var emailMix = true;
+var passMix = true;
+
+setInterval(function(){
+    
+    // 8 chars, 1 Let, 1 Num
+    var curPass = document.getElementById("password").value;
+
+    var length = false;
+    var letter = false;
+    var num = false;
+    var email = false;
+
+    var curEmail = document.getElementById("email").value;
+    var leftSpace = ($(window).width() - 700)/2;
+    document.getElementById("email").style.marginLeft= leftSpace.toString() + 'px';
+    
+    for (var i=0; i<curEmail.length; i++) {
+        var char = curEmail.charAt(i);
+        if (char === '@') {
+            email = true;
+            if (emailMix) {
+                mixpanel.track("email_entered");
+                emailMix = false;
+            }
+        }
+    }
+
+    if (curPass.length >= 8) length = true;
+
+    for (var i=0; i<curPass.length; i++) {
+        var char = curPass.charAt(i);
+        if ((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z')) letter = true;
+        if (char >= '0' && char <= '9') num = true;
+    }
+
+    var button = document.getElementById("signup_button");
+    if (length && letter && num) {
+        if (passMix) {
+            mixpanel.track("password_entered");
+            passMix = false;
+        }
+
+        if (email) {
+            button.style.pointerEvents="all";
+            button.style.backgroundColor="rgb(19,178,197)";
+        }
+    } else {
+
+        button.style.pointerEvents="none";
+        button.style.backgroundColor="transparent";
+    }
+}, 100);
+
+function showPassHelp() {
+    document.getElementById("password_help").style.visibility="visible";
+}
+
+window.onmessage = function(e){
+    mixpanel.identify(e.data);
 }

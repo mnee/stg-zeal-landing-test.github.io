@@ -14,17 +14,46 @@
     
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="general.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
 </head>
 
 <header class="hc1" data-state=" " id="header_1" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER">
     <img src="https://static.wixstatic.com/media/f59da8_4e2094124146410b9e8047fa46d2a0fa~mv2.png/v1/fill/w_206,h_82,al_c,usm_0.66_1.00_0.01/f59da8_4e2094124146410b9e8047fa46d2a0fa~mv2.png" id="logo">
 </header>
+<!--
+<form id="signup_fields">
+                <div class="DIV_1" style="float: left;">
+                    <div class="DIV_2">
+                    <input placeholder="Email" class="INPUT_3" id="email"/>
+                    
+                    <div class="DIV_4" style="cursor: default; border: none; width: 0px; padding: 0px"></div>
+	               </div>
+                </div>
+                
+                <div class="DIV_1" style="float: left;">
+	               <div class="DIV_2" style="width: 400px;">
+                    <input placeholder="Password" class="INPUT_3" id="password"/>
+                   
+
+                    <a onclick="signup()"><div class="DIV_4" id="signup_button">
+                        Start free trial
+                    </div></a>
+	               </div>
+                </div>
+            </form> 
+-->
     
 <footer>
     <div id="footer_signup">
-        <a id="button_foot_link" style="text-decoration: none;" onclick="trackButton()">
-            <div id="button_text_2">Start Free Trial</div>
-        </a>
+        <form>
+        <input placeholder="Email" id="email" type="email" required/>
+        <input placeholder="Password" id="password" type="password" required/>
+        <input value="Start Free Trial" type="submit" onsubmit="signup()" id="signup_button"/>
+        </form>
     </div>
 </footer>
     
@@ -33,9 +62,6 @@
     <div id="main_text">Give your child a head start with a personal coach!</div>
     
     <div id="sub_text">Join 40,000 K-8 students getting unlimited, live tutoring on Zeal for only $49. 99 a month!</div>
-    <a id="button_foot_link_1" style="text-decoration: none;" onclick="trackButton()">
-        <div id="button_text_main">Start Free Trial</div>
-    </a>
     
     <section id="learn_more"><span id="learn_more_text">LEARN MORE ▼</span>
     </section>  
@@ -104,10 +130,5 @@
     </section>
     <section id="footer_space"/>
     
-    <!-- Signup screen -->
-    <a onclick="closeSignup()"><div id="signup_close"></div></a>
-    <a onclick="closeSignup()"><div id="down_arrow">˅</div></a>
-    <iframe id="signup_screen" frameBorder="0" src="https://mnee.github.io/zeal-signup.github.io/" onload="setDistinct()">
-    </iframe> 
 </body>
 </html>
