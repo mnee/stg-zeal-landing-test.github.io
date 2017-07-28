@@ -141,7 +141,7 @@ function trackEdsurge() {
 function handleToken(data) {
     console.log(data.data.session.access_token);
     mixpanel.track("landing_signup");
-    //window.location="https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
+    window.location="https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
     //window.location = "https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
 }
 
