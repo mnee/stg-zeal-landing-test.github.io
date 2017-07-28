@@ -140,11 +140,7 @@ function trackEdsurge() {
 // SIGNUP CODE
 function handleToken(data) {
     console.log(data.data.session.access_token);
-    mixpanel.track("landing_signup", {
-        "$email": email,
-        "role": parent,
-        "username": email
-    });
+    mixpanel.track("landing_signup");
     //window.location="https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
     //window.location = "https://parent.zeal.com/#!/accessToken/" + data.data.session.access_token + "?dest=/activation/name";
 }
@@ -173,6 +169,8 @@ setInterval(function(){
     var curEmail = document.getElementById("email").value;
     var leftSpace = ($(window).width() - 700)/2;
     document.getElementById("email").style.marginLeft= leftSpace.toString() + 'px';
+    
+    document.getElementById("signup_button").style.marginRight=leftSpace.toString() + 'px';
     
     for (var i=0; i<curEmail.length; i++) {
         var char = curEmail.charAt(i);
