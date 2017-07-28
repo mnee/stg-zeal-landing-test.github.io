@@ -637,3 +637,8 @@ body {
     background-color: rgb(19, 178, 197);
     color: white;
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px rgb(6,39,78) inset !important;
+    -webkit-text-fill-color: white;
+}
